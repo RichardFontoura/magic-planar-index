@@ -1,0 +1,127 @@
+{
+  "magic-planar-index": {
+    "ui": {
+      "title": "Índice Planar Mágico",
+      "headerButton": "Índice Planar",
+      "searchPlaceholder": "Buscar planos...",
+      "searchLabel": "Buscar planos pelo nome",
+      "enabledPlanes": "Ativados:",
+      "readOnly": "Somente Visualização",
+      "legend": {
+        "enabled": "Ativado",
+        "disabled": "Desativado",
+        "major": "Plano Principal",
+        "minor": "Plano Menor",
+        "special": "Cósmico"
+      },
+      "tooltip": {
+        "enabled": "Ativado (Clique para desativar)",
+        "disabled": "Desativado (Clique para ativar)"
+      },
+      "instructions": {
+        "edit": "Clique em um plano para alternar seu status. Use Tab para navegar, Enter/Espaço para alternar.",
+        "view": "Você pode visualizar os planos, mas não pode editá-los. Contate o Mestre para alterações."
+      },
+      "layoutEditor": {
+        "title": "Editor de Layout Planar",
+        "planesTitle": "Planos",
+        "status": {
+          "custom": "Layout personalizado",
+          "default": "Layout padrao"
+        },
+        "sort": {
+          "label": "Ordenar",
+          "default": "Ordem do layout",
+          "name": "Nome",
+          "category": "Categoria"
+        },
+        "fields": {
+          "name": "Nome",
+          "id": "Id / Slug",
+          "category": "Categoria",
+          "x": "X",
+          "y": "Y",
+          "hidden": "Oculto"
+        },
+        "buttons": {
+          "save": "Salvar",
+          "cancel": "Recarregar",
+          "create": "Criar",
+          "edit": "Editar",
+          "delete": "Excluir",
+          "hide": "Ocultar",
+          "show": "Mostrar",
+          "reset": "Resetar para padrao",
+          "export": "Exportar JSON",
+          "import": "Importar JSON",
+          "center": "Centralizar",
+          "close": "Fechar"
+        },
+        "dialog": {
+          "createTitle": "Criar Plano",
+          "editTitle": "Editar Plano",
+          "deleteTitle": "Excluir Plano",
+          "deleteConfirm": "Excluir plano \"{name}\"?",
+          "resetTitle": "Resetar Layout",
+          "resetConfirm": "Resetar o layout para o mapa padrao?",
+          "exportTitle": "JSON do Layout Planar",
+          "importTitle": "Importar Layout",
+          "importHint": "Cole um JSON de layout para importar.",
+          "idHint": "Deixe vazio para gerar pelo nome.",
+          "idLocked": "Id fica travado apos criar."
+        }
+      }
+    },
+    "settings": {
+      "editPermission": {
+        "name": "Permissão de Edição",
+        "hint": "Quem pode ativar/desativar planos para atores.",
+        "choices": {
+          "gm": "Somente Mestre",
+          "trusted": "Jogadores Confiáveis e Acima",
+          "all": "Todos os Jogadores"
+        }
+      },
+      "ownedActorsOnly": {
+        "name": "Somente Atores Próprios",
+        "hint": "Quando ativado, jogadores só podem editar planos em atores que possuem."
+      },
+      "customBackground": {
+        "name": "Fundo Personalizado",
+        "hint": "URL opcional para uma imagem de fundo personalizada do mapa planar."
+      },
+      "planarIndexWindowSize": {
+        "name": "Tamanho da janela do Índice Planar",
+        "hint": "Tamanho salvo da janela do Índice Planar."
+      },
+      "customPlanarLayout": {
+        "name": "Layout Planar Personalizado",
+        "hint": "Dados do layout personalizado do mapa planar."
+      },
+      "layoutEditorMenu": {
+        "name": "Indice Planar: Editor de Layout",
+        "label": "Abrir Editor de Layout",
+        "hint": "Editor apenas para GM para ajustar posicoes, visibilidade e catalogo de planos."
+      }
+    },
+    "notifications": {
+      "noPermission": "Você não tem permissão para alternar planos para este ator.",
+      "toggleFailed": "Falha ao alternar plano. Por favor, tente novamente.",
+      "planeEnabled": "Plano ativado: {name}",
+      "planeDisabled": "Plano desativado: {name}",
+      "noGmAvailable": "Nenhum Mestre está disponível para processar a solicitação.",
+      "gmOnly": "Apenas o GM pode usar o editor de layout.",
+      "layoutMissingName": "O nome do plano e obrigatorio.",
+      "layoutMissingId": "O id do plano e obrigatorio.",
+      "layoutDuplicateId": "Id de plano ja existe: {id}",
+      "layoutInvalid": "Layout invalido: {errors}",
+      "layoutSaved": "Layout salvo.",
+      "layoutSaveFailed": "Falha ao salvar layout: {error}",
+      "layoutReset": "Layout resetado para o padrao.",
+      "layoutCopied": "Layout copiado para a area de transferencia.",
+      "layoutImportFailed": "Falha ao importar layout: {error}",
+      "layoutImportInvalid": "Importacao deve incluir um array de planos.",
+      "layoutImported": "Layout importado."
+    }
+  }
+}

@@ -1,0 +1,89 @@
+<div class="planar-index-wrapper">
+  <!-- Header with search and counter -->
+  <header class="planar-header">
+    <div class="header-left">
+      <h2 class="actor-name">
+        <i class="fa-solid fa-globe"></i>
+        {{actorName}}
+      </h2>
+    </div>
+    <div class="header-center">
+      <div class="search-container">
+        <i class="fa-solid fa-search search-icon"></i>
+        <input
+          type="text"
+          class="planar-search-input"
+          placeholder="{{searchPlaceholder}}"
+          aria-label="{{localize 'magic-planar-index.ui.searchLabel'}}"
+        />
+        <button type="button" class="planar-reset-btn" title="Centralizar" aria-label="Centralizar">
+          <i class="fa-solid fa-crosshairs"></i>
+        </button>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="plane-counter-container">
+        <span class="counter-label">{{localize "magic-planar-index.ui.enabledPlanes"}}</span>
+        <span class="plane-counter">{{enabledCount}} / {{totalCount}}</span>
+      </div>
+      {{#unless canEdit}}
+      <span class="read-only-badge">
+        <i class="fa-solid fa-eye"></i>
+        {{localize "magic-planar-index.ui.readOnly"}}
+      </span>
+      {{/unless}}
+    </div>
+  </header>
+
+  <!-- Legend -->
+  <div class="planar-legend">
+    <div class="legend-item">
+      <span class="legend-dot enabled"></span>
+      <span class="legend-label">{{localize "magic-planar-index.ui.legend.enabled"}}</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot disabled"></span>
+      <span class="legend-label">{{localize "magic-planar-index.ui.legend.disabled"}}</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot major"></span>
+      <span class="legend-label">{{localize "magic-planar-index.ui.legend.major"}}</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot minor"></span>
+      <span class="legend-label">{{localize "magic-planar-index.ui.legend.minor"}}</span>
+    </div>
+    <div class="legend-item">
+      <span class="legend-dot special"></span>
+      <span class="legend-label">{{localize "magic-planar-index.ui.legend.special"}}</span>
+    </div>
+  </div>
+
+  <!-- Map Container with Cosmic Background -->
+  <div class="planar-map-container">
+    <!-- Starfield overlay for additional depth -->
+    <div class="starfield-overlay"></div>
+
+    <div class="planar-map-content">
+      <!-- Plane Nodes -->
+      {{#each planes}}
+      <div
+        class="plane-node {{category}} {{#if enabled}}enabled{{else}}disabled{{/if}}"
+        data-plane-id="{{id}}"
+        data-plane-name="{{name}}"
+        style="left: {{multiply x 100}}%; top: {{multiply y 100}}%;"
+        tabindex="0"
+        role="checkbox"
+        aria-checked="{{enabled}}"
+        aria-label="{{name}}"
+        title="{{name}}{{#if enabled}} - {{localize 'magic-planar-index.ui.tooltip.enabled'}}{{else}} - {{localize 'magic-planar-index.ui.tooltip.disabled'}}{{/if}}"
+      >
+        <div class="plane-glow"></div>
+        <div class="plane-dot"></div>
+        <div class="plane-ring"></div>
+        <span class="plane-label">{{name}}</span>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

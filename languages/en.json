@@ -1,0 +1,127 @@
+{
+  "magic-planar-index": {
+    "ui": {
+      "title": "Magic Planar Index",
+      "headerButton": "Planar Index",
+      "searchPlaceholder": "Search planes...",
+      "searchLabel": "Search for planes by name",
+      "enabledPlanes": "Enabled:",
+      "readOnly": "View Only",
+      "legend": {
+        "enabled": "Enabled",
+        "disabled": "Disabled",
+        "major": "Major Plane",
+        "minor": "Minor Plane",
+        "special": "Cosmic"
+      },
+      "tooltip": {
+        "enabled": "Enabled (Click to disable)",
+        "disabled": "Disabled (Click to enable)"
+      },
+      "instructions": {
+        "edit": "Click on a plane to toggle its status. Use Tab to navigate, Enter/Space to toggle.",
+        "view": "You can view the planes but cannot edit them. Contact the GM for changes."
+      },
+      "layoutEditor": {
+        "title": "Planar Layout Editor",
+        "planesTitle": "Planes",
+        "status": {
+          "custom": "Custom Layout",
+          "default": "Default Layout"
+        },
+        "sort": {
+          "label": "Sort",
+          "default": "Layout Order",
+          "name": "Name",
+          "category": "Category"
+        },
+        "fields": {
+          "name": "Name",
+          "id": "Id / Slug",
+          "category": "Category",
+          "x": "X",
+          "y": "Y",
+          "hidden": "Hidden"
+        },
+        "buttons": {
+          "save": "Save",
+          "cancel": "Reload",
+          "create": "Create",
+          "edit": "Edit",
+          "delete": "Delete",
+          "hide": "Hide",
+          "show": "Show",
+          "reset": "Reset to Default",
+          "export": "Export JSON",
+          "import": "Import JSON",
+          "center": "Center View",
+          "close": "Close"
+        },
+        "dialog": {
+          "createTitle": "Create Plane",
+          "editTitle": "Edit Plane",
+          "deleteTitle": "Delete Plane",
+          "deleteConfirm": "Delete plane \"{name}\"?",
+          "resetTitle": "Reset Layout",
+          "resetConfirm": "Reset the layout to the default map?",
+          "exportTitle": "Planar Layout JSON",
+          "importTitle": "Import Layout",
+          "importHint": "Paste a layout JSON to import.",
+          "idHint": "Leave blank to auto-generate from name.",
+          "idLocked": "Id is locked after creation."
+        }
+      }
+    },
+    "settings": {
+      "editPermission": {
+        "name": "Edit Permission",
+        "hint": "Who can toggle planes on/off for actors.",
+        "choices": {
+          "gm": "GM Only",
+          "trusted": "Trusted Players and Above",
+          "all": "All Players"
+        }
+      },
+      "ownedActorsOnly": {
+        "name": "Owned Actors Only",
+        "hint": "When enabled, players can only edit planes on actors they own."
+      },
+      "customBackground": {
+        "name": "Custom Background",
+        "hint": "Optional URL to a custom background image for the planar map."
+      },
+      "planarIndexWindowSize": {
+        "name": "Planar Index Window Size",
+        "hint": "Stored window size for the Planar Index window."
+      },
+      "customPlanarLayout": {
+        "name": "Custom Planar Layout",
+        "hint": "Stored custom layout data for the planar map."
+      },
+      "layoutEditorMenu": {
+        "name": "Planar Index: Layout Editor",
+        "label": "Open Layout Editor",
+        "hint": "GM-only editor to adjust positions, visibility, and the plane catalog."
+      }
+    },
+    "notifications": {
+      "noPermission": "You don't have permission to toggle planes for this actor.",
+      "toggleFailed": "Failed to toggle plane. Please try again.",
+      "planeEnabled": "Plane enabled: {name}",
+      "planeDisabled": "Plane disabled: {name}",
+      "noGmAvailable": "No GM is available to process the request.",
+      "gmOnly": "Only the GM can use the layout editor.",
+      "layoutMissingName": "Plane name is required.",
+      "layoutMissingId": "Plane id is required.",
+      "layoutDuplicateId": "Plane id already exists: {id}",
+      "layoutInvalid": "Layout is invalid: {errors}",
+      "layoutSaved": "Layout saved.",
+      "layoutSaveFailed": "Failed to save layout: {error}",
+      "layoutReset": "Layout reset to default.",
+      "layoutCopied": "Layout copied to clipboard.",
+      "layoutImportFailed": "Failed to import layout: {error}",
+      "layoutImportInvalid": "Import data must include a planes array.",
+      "layoutImported": "Layout imported."
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "magic-planar-index",
+  "title": "Magic Planar Index",
+  "description": "A galaxy-style multiverse map UI for tracking visited/attuned planes per Actor. Features a cosmic starfield background with toggleable plane nodes.",
+  "version": "1.0.0",
+  "socket": true,
+  "authors": [
+    {
+      "name": "LoboWerewolf",
+      "url": "https://www.patreon.com/cw/LoboWerewolf"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "esmodules": ["main.js"],
+  "styles": ["styles/planar-index/planar-index.css", "styles/planar-layout-editor/planar-layout-editor.css"],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "languages/en.json"
+    },
+    {
+      "lang": "pt-BR",
+      "name": "Português (Brasil)",
+      "path": "languages/pt-BR.json"
+    }
+  ],
+  "url": "https://github.com/RichardFontoura/magic-planar-index",
+  "manifest": "https://github.com/RichardFontoura/magic-planar-index/releases/download/1.0.0/module.json",
+  "download": "https://github.com/RichardFontoura/magic-planar-index/releases/download/1.0.0/magic-planar-index.zip"
+}

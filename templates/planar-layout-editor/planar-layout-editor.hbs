@@ -1,0 +1,151 @@
+<div class="planar-layout-editor-wrapper">
+  <header class="planar-layout-header">
+    <div class="header-left">
+      <h2 class="layout-title">
+        <i class="fa-solid fa-diagram-project"></i>
+        {{localize "magic-planar-index.ui.layoutEditor.title"}}
+      </h2>
+      <span class="layout-status {{#if hasCustomLayout}}is-custom{{else}}is-default{{/if}}">{{layoutStatusLabel}}</span>
+    </div>
+    <div class="header-actions">
+      <button type="button" class="planar-layout-save-btn">
+        <i class="fa-solid fa-check"></i>
+        {{localize "magic-planar-index.ui.layoutEditor.buttons.save"}}
+      </button>
+      <button type="button" class="planar-layout-cancel-btn">
+        <i class="fa-solid fa-rotate-left"></i>
+        {{localize "magic-planar-index.ui.layoutEditor.buttons.cancel"}}
+      </button>
+    </div>
+  </header>
+
+  <div class="planar-layout-body">
+    <section class="planar-layout-map">
+      <div class="planar-map-container">
+        <div class="starfield-overlay"></div>
+        <button
+          type="button"
+          class="planar-map-reset-btn"
+          title="{{localize "magic-planar-index.ui.layoutEditor.buttons.center"}}"
+          aria-label="{{localize "magic-planar-index.ui.layoutEditor.buttons.center"}}"
+        >
+          <i class="fa-solid fa-crosshairs"></i>
+        </button>
+        <div class="planar-map-content">
+          {{#each planes}}
+          <div
+            class="planar-layout-node {{category}} {{#if hidden}}is-hidden{{/if}} {{#if selected}}is-selected{{/if}}"
+            data-plane-id="{{id}}"
+            data-plane-name="{{name}}"
+            style="left: {{multiply x 100}}%; top: {{multiply y 100}}%;"
+            tabindex="0"
+            aria-label="{{name}}"
+            title="{{name}}"
+          >
+            <div class="plane-glow"></div>
+            <div class="plane-dot"></div>
+            <div class="plane-ring"></div>
+            <span class="plane-label">{{name}}</span>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </section>
+
+    <aside class="planar-layout-panel">
+      <div class="panel-section panel-search">
+        <div class="search-container">
+          <i class="fa-solid fa-search search-icon"></i>
+          <input
+            type="text"
+            class="planar-layout-search-input"
+            placeholder="{{searchPlaceholder}}"
+            aria-label="{{localize "magic-planar-index.ui.searchLabel"}}"
+          />
+        </div>
+        <div class="panel-sort">
+          <label for="planar-layout-sort">{{localize "magic-planar-index.ui.layoutEditor.sort.label"}}</label>
+          <select id="planar-layout-sort" class="planar-layout-sort-select">
+            {{#each sortOptions}}
+            <option value="{{value}}" {{#if selected}}selected{{/if}}>{{label}}</option>
+            {{/each}}
+          </select>
+        </div>
+      </div>
+
+      <div class="panel-section panel-actions-top">
+        <button type="button" class="planar-layout-create-btn">
+          <i class="fa-solid fa-plus"></i>
+          {{localize "magic-planar-index.ui.layoutEditor.buttons.create"}}
+        </button>
+      </div>
+
+      <div class="panel-section panel-list">
+        <div class="panel-title">{{localize "magic-planar-index.ui.layoutEditor.planesTitle"}}</div>
+        <ul class="planar-layout-plane-list">
+          {{#each planeList}}
+          <li
+            class="plane-list-item {{#if hidden}}is-hidden{{/if}} {{#if selected}}is-selected{{/if}}"
+            data-plane-id="{{id}}"
+            data-plane-name="{{name}}"
+          >
+            <div class="plane-list-main">
+              <span class="plane-category-dot {{category}}"></span>
+              <span class="plane-name">{{name}}</span>
+              {{#if hidden}}
+              <span class="plane-hidden-label" title="{{localize "magic-planar-index.ui.layoutEditor.buttons.show"}}">
+                <i class="fa-solid fa-eye-slash"></i>
+              </span>
+              {{/if}}
+            </div>
+            <div class="plane-list-actions">
+              <button
+                type="button"
+                data-action="edit"
+                data-plane-id="{{id}}"
+                title="{{localize "magic-planar-index.ui.layoutEditor.buttons.edit"}}"
+                aria-label="{{localize "magic-planar-index.ui.layoutEditor.buttons.edit"}}"
+              >
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button
+                type="button"
+                data-action="toggle-hidden"
+                data-plane-id="{{id}}"
+                title="{{#if hidden}}{{localize "magic-planar-index.ui.layoutEditor.buttons.show"}}{{else}}{{localize "magic-planar-index.ui.layoutEditor.buttons.hide"}}{{/if}}"
+                aria-label="{{#if hidden}}{{localize "magic-planar-index.ui.layoutEditor.buttons.show"}}{{else}}{{localize "magic-planar-index.ui.layoutEditor.buttons.hide"}}{{/if}}"
+              >
+                <i class="fa-solid {{#if hidden}}fa-eye{{else}}fa-eye-slash{{/if}}"></i>
+              </button>
+              <button
+                type="button"
+                data-action="delete"
+                data-plane-id="{{id}}"
+                title="{{localize "magic-planar-index.ui.layoutEditor.buttons.delete"}}"
+                aria-label="{{localize "magic-planar-index.ui.layoutEditor.buttons.delete"}}"
+              >
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </li>
+          {{/each}}
+        </ul>
+      </div>
+
+      <div class="panel-section panel-actions-bottom">
+        <button type="button" class="planar-layout-reset-btn">
+          <i class="fa-solid fa-rotate"></i>
+          {{localize "magic-planar-index.ui.layoutEditor.buttons.reset"}}
+        </button>
+        <button type="button" class="planar-layout-export-btn">
+          <i class="fa-solid fa-file-export"></i>
+          {{localize "magic-planar-index.ui.layoutEditor.buttons.export"}}
+        </button>
+        <button type="button" class="planar-layout-import-btn">
+          <i class="fa-solid fa-file-import"></i>
+          {{localize "magic-planar-index.ui.layoutEditor.buttons.import"}}
+        </button>
+      </div>
+    </aside>
+  </div>
+</div>
